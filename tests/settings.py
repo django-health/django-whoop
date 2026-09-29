@@ -1,6 +1,6 @@
 """Minimal Django settings for pytest-django."""
 
-SECRET_KEY = "test-secret-key"  # noqa: S105
+SECRET_KEY = "test-secret-key"
 DEBUG = False
 
 INSTALLED_APPS = [
@@ -48,5 +48,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 USE_TZ = True
 
 WHOOP_CLIENT_ID = "test-client-id"
-WHOOP_CLIENT_SECRET = "test-client-secret"  # noqa: S105
+WHOOP_CLIENT_SECRET = "test-client-secret"
 WHOOP_REDIRECT_URI = "http://testserver/whoop/callback/"

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "django-whoop"
-version = "0.2.0"
+version = "0.2.1"
 description = "A Django app for the WHOOP API (v2), backed by django-healthdatamodel."
 readme = "README.md"
 license = { text = "BSD-3-Clause" }

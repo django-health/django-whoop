@@ -34,19 +34,19 @@ The model uses `settings.AUTH_USER_MODEL` so it works with any custom user model
 Include the URLs:
 
 ```python
-path("whoop/", include("whoop.urls")),
+(path("whoop/", include("whoop.urls")),)
 ```
 
 ## Configuration
 
 ```python
-WHOOP_CLIENT_ID = "..."        # from the WHOOP developer dashboard
+WHOOP_CLIENT_ID = "..."  # from the WHOOP developer dashboard
 WHOOP_CLIENT_SECRET = "..."
 WHOOP_REDIRECT_URI = "https://your-app.example.com/whoop/callback/"
 
 # Optional:
-WHOOP_DEFAULT_SCOPES = [...]         # default: all read scopes + offline
-WHOOP_CONNECT_SUCCESS_URL = "/"      # default: /admin/
+WHOOP_DEFAULT_SCOPES = [...]  # default: all read scopes + offline
+WHOOP_CONNECT_SUCCESS_URL = "/"  # default: /admin/
 ```
 
 Create the app at the [WHOOP developer dashboard](https://developer-dashboard.whoop.com/) (any WHOOP member can). See `docs/whoop/oauth.md` for the flow details — notably, the `offline` scope is what makes WHOOP issue a refresh token, and WHOOP rotates the refresh token on every refresh.
@@ -77,6 +77,7 @@ Point the webhook URL in the developer dashboard at `/whoop/webhooks/`. Every de
 from django.dispatch import receiver
 from whoop.signals import event_received
 from whoop.webhooks import process_event
+
 
 @receiver(event_received)
 def on_event(sender, payload, **kwargs):
