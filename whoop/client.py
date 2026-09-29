@@ -22,8 +22,9 @@ and both are RFC3339 timestamps. Pages are capped at 25 records.
 from __future__ import annotations
 
 import time
+from collections.abc import Callable, Iterator, Mapping
 from datetime import datetime, timezone
-from typing import TYPE_CHECKING, Any, Callable, Iterator, Mapping
+from typing import TYPE_CHECKING, Any
 
 import httpx
 
